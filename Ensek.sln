@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeterApi", "EnsekMeterApi\EnsekMeterApi.csproj", "{2F82185C-D0C3-4ED7-9881-857897F9B1E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeter", "EnsekMeter\EnsekMeter.csproj", "{23119508-F498-4C6B-89A4-DD8A019C2866}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnsekMeter.Tests", "EnsekMeter.Tests\EnsekMeter.Tests.csproj", "{CF75CF9E-ABF6-4126-8ECB-8E461A6807D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F82185C-D0C3-4ED7-9881-857897F9B1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F82185C-D0C3-4ED7-9881-857897F9B1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F82185C-D0C3-4ED7-9881-857897F9B1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F82185C-D0C3-4ED7-9881-857897F9B1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23119508-F498-4C6B-89A4-DD8A019C2866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23119508-F498-4C6B-89A4-DD8A019C2866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23119508-F498-4C6B-89A4-DD8A019C2866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23119508-F498-4C6B-89A4-DD8A019C2866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF75CF9E-ABF6-4126-8ECB-8E461A6807D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF75CF9E-ABF6-4126-8ECB-8E461A6807D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF75CF9E-ABF6-4126-8ECB-8E461A6807D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF75CF9E-ABF6-4126-8ECB-8E461A6807D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

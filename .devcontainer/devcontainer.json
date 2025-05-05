@@ -1,0 +1,22 @@
+{
+"name": "Ensek Meter Project",
+"dockerFile": "Dockerfile",
+"context": "..",
+"appPort": [5000, 5001],
+"settings": {
+"terminal.integrated.shell.linux": "/bin/bash"
+},
+"extensions": [
+"ms-dotnettools.csharp",
+"ms-azuretools.vscode-docker",
+"ms-vscode.vscode-node-azure-pack",
+"ms-dotnettools.csdevkit",
+"formulahendry.dotnet-test-explorer",
+"ms-vscode.test-adapter-converter",
+"k--kato.docomment",
+"eamodio.gitlens",
+"christian-kohler.path-intellisense"
+],
+"postCreateCommand": "dotnet restore",
+"remoteUser": "vscode"
+}
