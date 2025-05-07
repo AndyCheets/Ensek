@@ -26,7 +26,7 @@ namespace EnsekMeter.Services
         /// <summary>
         /// The validators used to check the meter reading data
         /// </summary>
-        private readonly IEnumerable<IMeterReadingValidator> _validators;
+        private readonly IMeterReadingValidation _validators;
 
         /// <summary>
         /// The default constructor
@@ -34,7 +34,7 @@ namespace EnsekMeter.Services
         /// <param name="repo">The instance of the database repo</param>
         /// <param name="validators">A collection of validators</param>
         public MeterReadingUploadService(IMeterReadingRepository repo,
-        IEnumerable<IMeterReadingValidator> validators)
+        IMeterReadingValidation validators)
         {
             _repo = repo;
             _validators = validators;
@@ -78,25 +78,18 @@ namespace EnsekMeter.Services
                     result.FailedReadings++;
                     continue;
                 }
-                    
-                // Validate the data in the row
-                bool isValid = true;
-                foreach (var validator in _validators)
-                {
-                    var validation = await validator.ValidateAsync(row, account);
-                    if (!validation.IsValid)
-                    {
-                        // Update the return value with the reason for the failure
-                        result.Results.Add($"Skipped: {validation.ErrorMessage}");
-                        result.FailedReadings++;
-                        isValid = false;
-                        break;
-                    }
-                }
 
-                // If the record is not valid move on to next row
-                if (!isValid)
-                    continue;
+                // Validate the data in the row
+                var isValid = await _validators.IsValidAsync(row, account);
+                
+                if (!isValid.IsValid)
+                {
+                    // Update the return value with the reason for the failure
+                    result.Results.Add($"Skipped: {isValid.ErrorMessage}");
+                    result.FailedReadings++;
+                    break;
+                }
+                
 
                 // Create new meter reading to be added to database
                 var newReading = new MeterReading

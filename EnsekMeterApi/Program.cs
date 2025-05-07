@@ -24,6 +24,8 @@ builder.Services.AddDbContext<EnsekMeterApi.Data.MeterDbContext>(options =>
 
 builder.Services.AddScoped<IMeterReadingRepository, SqlMeterReadingRepository>();
 builder.Services.AddScoped<IMeterReadingUploadService, MeterReadingUploadService>();
+
+builder.Services.AddScoped<IMeterReadingValidation, MeterReadingValidation>();
 builder.Services.AddScoped<IMeterReadingValidator, MeterReadingAccountValidator>();
 builder.Services.AddScoped<IMeterReadingValidator, MeterReadingValueValidator>();
 builder.Services.AddScoped<IMeterReadingValidator, NewerThanLatestReadingValidator>();
